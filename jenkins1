@@ -1,0 +1,33 @@
+pipeline{
+    agent{
+        node{
+            label 'docker-agent-py'
+        }
+    }
+    stages{
+        stage('bulid'){
+            steps{
+            echo "hello new bulild"
+            sh """ 
+            echo "bulilding"
+            """
+            }
+        }
+        stage('Test'){
+            steps{
+            echo "test env"
+            sh """ 
+            echo "testing"
+            """
+            }
+        }
+         stage('depoly'){
+            steps{
+            echo "hello deploy"
+            sh """ 
+            echo "depoly"
+            """
+            }
+        }
+    }
+}
