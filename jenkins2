@@ -1,0 +1,25 @@
+pipeline{
+    agent{
+        node{
+            label 'docker-agent-py'
+        }
+    }
+    stages{
+        stage('bulid'){
+            steps{
+            echo "hello printfile"
+            sh """ 
+           python3 printhello.py
+            """
+            }
+        }
+         stage('depoly'){
+            steps{
+            echo "hello deploy"
+            sh """ 
+            echo "depoly"
+            """
+            }
+        }
+    }
+}
